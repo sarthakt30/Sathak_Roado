@@ -86,10 +86,14 @@ def load_data():
             'engagement_score': np.random.randint(10, 95)
         })
     
-    return pd.DataFrame(data)
-
-# Load data
-df = load_data()
+    df = pd.DataFrame(data)
+    
+    # Add derived columns that dashboard needs
+    df['uses_ai'] = df['ai_task_uses'] > 0
+    df['uses_mobile'] = df['mobile_sessions'] > 0
+    df['lifetime_days'] = np.random.randint(30, 500, len(df))  # simulated lifetime
+    
+    return df
 
 # =============================================================================
 # SIDEBAR FILTERS
