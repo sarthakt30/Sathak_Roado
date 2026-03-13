@@ -28,7 +28,19 @@ st.markdown("""
         background-color: #e8f4f8; 
         border-left: 4px solid #2196F3; 
         padding: 1rem; 
-        margin: 0.5rem 0; 
+        margin: 0.5rem 0;
+        color: #1a1a1a;
+    }
+    .recommendation h4 {
+        color: #1565C0;
+        margin-bottom: 0.5rem;
+    }
+    .recommendation p {
+        color: #333;
+        line-height: 1.5;
+    }
+    .recommendation strong {
+        color: #0D47A1;
     }
 </style>
 """, unsafe_allow_html=True)
