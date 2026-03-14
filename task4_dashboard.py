@@ -114,11 +114,11 @@ df = load_data()
 # SIDEBAR FILTERS
 # =============================================================================
 
-st.sidebar.markdown("## 📊 Interactive Filters")
+st.sidebar.markdown("## Interactive Filters")
 
 # Filter 1: Date Range
 date_range = st.sidebar.date_input(
-    "📅 Customer Signup Date Range",
+    "Customer Signup Date Range",
     value=[df['created_at'].min(), df['created_at'].max()],
     min_value=df['created_at'].min(),
     max_value=df['created_at'].max()
@@ -126,14 +126,14 @@ date_range = st.sidebar.date_input(
 
 # Filter 2: Plan Tier
 selected_tiers = st.sidebar.multiselect(
-    "🏷️ Plan Tiers",
+    "Plan Tiers",
     options=['free', 'starter', 'pro', 'enterprise'],
     default=['free', 'starter', 'pro', 'enterprise']
 )
 
 # Filter 3: Customer Segment (calculated)
 segment_filter = st.sidebar.multiselect(
-    "👥 Customer Segment",
+    "Customer Segment",
     options=['Champions', 'Loyal Customers', 'Potential Loyalists', 'At Risk'],
     default=['Champions', 'Loyal Customers', 'Potential Loyalists', 'At Risk']
 )
@@ -157,7 +157,7 @@ filtered_df = df[mask].copy()
 # HEADER
 # =============================================================================
 
-st.markdown('<p class="main-header">📊 NimbusAI Dashboard</p>', unsafe_allow_html=True)
+st.markdown('<p class="main-header">NimbusAI Dashboard</p>', unsafe_allow_html=True)
 st.markdown('<p class="sub-header">Product Usage & Feature Adoption Analysis</p>', unsafe_allow_html=True)
 
 st.markdown("---")
@@ -213,7 +213,7 @@ st.markdown("---")
 # VISUALIZATION 1: Feature Adoption by Plan Tier (Business Question: What to build/improve?)
 # =============================================================================
 
-st.markdown("### 📈 1. Feature Adoption Analysis")
+st.markdown("### 1. Feature Adoption Analysis")
 st.markdown("*Which features drive engagement across different plan tiers?*")
 
 # Calculate feature adoption by tier
@@ -250,7 +250,7 @@ st.plotly_chart(fig1, use_container_width=True)
 # VISUALIZATION 2: Engagement vs Churn (Business Question: What drives retention?)
 # =============================================================================
 
-st.markdown("### 📊 2. Engagement Impact on Retention")
+st.markdown("### 2. Engagement Impact on Retention")
 st.markdown("*Do highly engaged customers churn less?*")
 
 col_left, col_right = st.columns(2)
@@ -295,7 +295,7 @@ with col_right:
 # VISUALIZATION 3: Cross-Source Analysis (Combining SQL + MongoDB Data)
 # =============================================================================
 
-st.markdown("### 🔗 3. Cross-Database Analysis: MRR vs Feature Usage")
+st.markdown("### 3. Cross-Database Analysis: MRR vs Feature Usage")
 st.markdown("*SQL (Revenue) + MongoDB (Feature Usage) = Expansion Opportunities*")
 
 fig3 = px.scatter(
@@ -326,7 +326,7 @@ st.plotly_chart(fig3, use_container_width=True)
 # VISUALIZATION 4: Customer Segmentation Heatmap
 # =============================================================================
 
-st.markdown("### 🎯 4. Customer Segmentation Matrix")
+st.markdown("### 4. Customer Segmentation Matrix")
 st.markdown("*Identifying high-value, high-engagement customers for expansion*")
 
 # Create heatmap data
@@ -356,7 +356,7 @@ st.plotly_chart(fig4, use_container_width=True)
 # VISUALIZATION 5: Mobile App Impact Analysis
 # =============================================================================
 
-st.markdown("### 📱 5. Mobile App Usage Impact")
+st.markdown("### 5. Mobile App Usage Impact")
 st.markdown("*Does mobile engagement correlate with retention and lifetime value?*")
 
 # Mobile usage impact
@@ -403,7 +403,7 @@ st.plotly_chart(fig5, use_container_width=True)
 # =============================================================================
 
 st.markdown("---")
-st.markdown("### 💡 Actionable Recommendations")
+st.markdown("### Actionable Recommendations")
 
 recommendations = [
     {
@@ -437,7 +437,7 @@ for rec in recommendations:
 # =============================================================================
 
 st.markdown("---")
-st.markdown("### 🔍 Data Explorer")
+st.markdown("### Data Explorer")
 
 with st.expander("View Raw Data"):
     # Column selector
